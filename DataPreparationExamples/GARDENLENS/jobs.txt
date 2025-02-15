@@ -1,0 +1,22 @@
+python LOCA2_CMIP6_runCMOR.py ssp585 pr AWI-CM-1-1-MR 
+python LOCA2_CMIP6_runCMOR.py ssp585 pr IPSL-CM6A-LR 
+python LOCA2_CMIP6_runCMOR.py ssp585 pr ACCESS-CM2 
+python LOCA2_CMIP6_runCMOR.py ssp585 pr INM-CM5-0 
+python LOCA2_CMIP6_runCMOR.py ssp585 pr KACE-1-0-G 
+python LOCA2_CMIP6_runCMOR.py ssp585 pr MPI-ESM1-2-LR 
+python LOCA2_CMIP6_runCMOR.py ssp585 pr NorESM2-LM 
+python LOCA2_CMIP6_runCMOR.py ssp585 pr CanESM5 
+python LOCA2_CMIP6_runCMOR.py ssp585 pr GFDL-ESM4 
+python LOCA2_CMIP6_runCMOR.py ssp585 pr ACCESS-ESM1-5 
+python LOCA2_CMIP6_runCMOR.py ssp585 pr GFDL-CM4 
+python LOCA2_CMIP6_runCMOR.py ssp585 pr INM-CM4-8 
+python LOCA2_CMIP6_runCMOR.py ssp585 pr EC-Earth3 
+python LOCA2_CMIP6_runCMOR.py ssp585 pr BCC-CSM2-MR 
+python LOCA2_CMIP6_runCMOR.py ssp585 pr MPI-ESM1-2-HR 
+python LOCA2_CMIP6_runCMOR.py ssp585 pr TaiESM1 
+python LOCA2_CMIP6_runCMOR.py ssp585 pr EC-Earth3-Veg 
+python LOCA2_CMIP6_runCMOR.py ssp585 pr FGOALS-g3 
+python LOCA2_CMIP6_runCMOR.py ssp585 pr MIROC6 
+python LOCA2_CMIP6_runCMOR.py ssp585 pr NorESM2-MM 
+python LOCA2_CMIP6_runCMOR.py ssp585 pr MRI-ESM2-0 
+
