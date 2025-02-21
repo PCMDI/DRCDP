@@ -13,6 +13,13 @@ from datetime import datetime
 # PJG  11052024 added inputs to run via GNU parallel
 # PJG  02052025 added if for LOCA2-1 version of 'pr'
 
+# %% Get current script path, append src dir
+current_dir = os.path.dirname(os.path.abspath(__file__))
+new_path = os.path.join(current_dir, "..", "..", "src")
+sys.path.append(new_path)
+from DRCDPLib import writeUserJson
+
+
 multi  = True 
 if multi == True:
  expi = sys.argv[1]
@@ -24,7 +31,7 @@ if multi == True:
  if vari == 'tasmax': outputUnits = 'K'
  if vari == 'tasmin': outputUnits = 'K'
 
-cmorTable = '../../Tables/DRCDP_APday.json'
+cmorTable = '../../Tables/DRCDP_CV.json'
 inputJson = 'LOCA2-0_CMIP6_input.json'
 
 inputFilePath = '/global/cfs/projectdirs/m3522/cmip6/LOCA2/*/0p0625deg/r1i1p1f1/historical/' + vari + '/*v2022*.nc'  #v20220519.nc'
@@ -108,6 +115,7 @@ for mod in mods:
 ##### CMOR setup
     cmor.setup(inpath='./',netcdf_file_action=cmor.CMOR_REPLACE_4,logfile= exp + '-' + mod + '-' + ri + '-'+'cmorLog.txt')
     cmor.dataset_json(inputJson)
+    cmor.dataset_json(writeUserJson(inputJson, cmorTable))
     cmor.load_table(cmorTable)
 
 # SET CMIP MODEL SPECIFIC ATTRIBUTES 
@@ -119,9 +127,11 @@ for mod in mods:
 # Create CMOR axes
     cmorLat = cmor.axis("latitude", coord_vals=lat[:], cell_bounds=f.lat_bnds.values, units="degrees_north")
     cmorLon = cmor.axis("longitude", coord_vals=lon[:], cell_bounds=f.lon_bnds.values, units="degrees_east")
-    cmorTime = cmor.axis("time", coord_vals=cftime.date2num(time,tunits), cell_bounds=cftime.date2num(f.time_bnds.values,tunits), units= tunits)
+    tbds = cftime.date2num(f.time_bnds.values[:],tunits).astype(np.float64) 
+    cmorTime = cmor.axis("time", coord_vals=cftime.date2num(time,tunits), cell_bounds=tbds, units= tunits)
+#   cmorTime = cmor.axis("time", coord_vals=cftime.date2num(time,tunits), units= tunits)
     cmoraxes = [cmorTime,cmorLat, cmorLon]
-
+    cell_bounds=cftime.date2num(f.time_bnds.values[:],tunits)
 # Setup units and create variable to write using cmor - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
     varid   = cmor.variable(outputVarName,outputUnits,cmoraxes,missing_value=1.e20)
     values  = np.array(d[:],np.float32)
@@ -136,4 +146,4 @@ for mod in mods:
     fc.close()
     end_time = datetime.now()
     print('done cmorizing ',mod,exp, ri, yr[0],'-',yr[1],' process time: {}'.format(end_time-start_time))
-                                                          
+cell_bounds=cftime.date2num(f.time_bnds.values,tunits)                                                          
