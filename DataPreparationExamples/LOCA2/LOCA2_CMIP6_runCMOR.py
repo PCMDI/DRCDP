@@ -128,10 +128,8 @@ for mod in mods:
     cmorLat = cmor.axis("latitude", coord_vals=lat[:], cell_bounds=f.lat_bnds.values, units="degrees_north")
     cmorLon = cmor.axis("longitude", coord_vals=lon[:], cell_bounds=f.lon_bnds.values, units="degrees_east")
     tbds = cftime.date2num(f.time_bnds.values[:],tunits).astype(np.float64) 
-    cmorTime = cmor.axis("time", coord_vals=cftime.date2num(time,tunits), cell_bounds=tbds, units= tunits)
-#   cmorTime = cmor.axis("time", coord_vals=cftime.date2num(time,tunits), units= tunits)
+    cmorTime = cmor.axis("time", coord_vals=cftime.date2num(time,tunits), cell_bounds=tbds, units=tunits)
     cmoraxes = [cmorTime,cmorLat, cmorLon]
-    cell_bounds=cftime.date2num(f.time_bnds.values[:],tunits)
 # Setup units and create variable to write using cmor - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
     varid   = cmor.variable(outputVarName,outputUnits,cmoraxes,missing_value=1.e20)
     values  = np.array(d[:],np.float32)
@@ -146,4 +144,3 @@ for mod in mods:
     fc.close()
     end_time = datetime.now()
     print('done cmorizing ',mod,exp, ri, yr[0],'-',yr[1],' process time: {}'.format(end_time-start_time))
-cell_bounds=cftime.date2num(f.time_bnds.values,tunits)                                                          
