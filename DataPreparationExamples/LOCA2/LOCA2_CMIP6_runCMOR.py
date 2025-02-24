@@ -58,7 +58,7 @@ for exp in exps:
  lst = glob.glob(infile)
  mods = []
  for l in lst:
-    mod = l.split('/')[7]
+    mod = l.split('.')[1]
     if mod not in mods: mods.append(mod)
  mod_runs[exp] = {}
  for mod in mods:
