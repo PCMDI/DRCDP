@@ -175,7 +175,6 @@ for mod in mods:
                 f = fc.sel(time=slice(yr[0], yr[1]))
                 print("check time values from dataset selection")
                 print(f.time.values)
-                sys.exit()
                 d = f[inputVarName]
 
                 lat = f.lat.values
@@ -183,6 +182,8 @@ for mod in mods:
                 lon = f.lon.values
                 # print("lon", lon)
                 time = f.time.values
+                print(time)
+                sys.exit()
                 print("time", time)
                 tunits = "days since 1900-01-01"
 
