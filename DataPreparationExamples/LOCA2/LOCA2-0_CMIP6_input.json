@@ -6,6 +6,7 @@
     "driving_mip_era": "CMIP6",
     "driving_source_id": "ACCESS-CM2",
     "driving_variant_label": "r1i1p1f1",
-    "outpath":"/global/cfs/projectdirs/m3522/project_downscale/"
+    "outpath-tmp":"/global/cfs/projectdirs/m3522/project_downscale/",
+    "outpath":"./"
 }
 

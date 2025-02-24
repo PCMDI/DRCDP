@@ -35,6 +35,7 @@ cmorTable = '../../Tables/DRCDP_CV.json'
 inputJson = 'LOCA2-0_CMIP6_input.json'
 
 inputFilePath = '/global/cfs/projectdirs/m3522/cmip6/LOCA2/*/0p0625deg/r1i1p1f1/historical/' + vari + '/*v2022*.nc'  #v20220519.nc'
+inputFilePath = '/p/user_pub/PCMDIobs/obs4MIPs_input/DRCDP/tmp/*.nc'  # TEST ON GATES
 
 if vari == 'pr':  # LOCA2.1   
  inputFilePath = '/global/cfs/projectdirs/m3522/cmip6/LOCA2/*/0p0625deg/r1i1p1f1/historical/' + vari + '/*v20240915*.nc' 
@@ -128,7 +129,7 @@ for mod in mods:
     cmorLat = cmor.axis("latitude", coord_vals=lat[:], cell_bounds=f.lat_bnds.values, units="degrees_north")
     cmorLon = cmor.axis("longitude", coord_vals=lon[:], cell_bounds=f.lon_bnds.values, units="degrees_east")
     tbds = cftime.date2num(f.time_bnds.values[:],tunits).astype(np.float64) 
-    cmorTime = cmor.axis("time", coord_vals=cftime.date2num(time,tunits), cell_bounds=tbds, units=tunits)
+    cmorTime = cmor.axis("time", coord_vals=cftime.date2num(time,tunits).astype(np.float64), cell_bounds=tbds, units=tunits)
     cmoraxes = [cmorTime,cmorLat, cmorLon]
 # Setup units and create variable to write using cmor - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
     varid   = cmor.variable(outputVarName,outputUnits,cmoraxes,missing_value=1.e20)
