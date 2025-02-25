@@ -35,15 +35,15 @@ from DRCDPLib import writeUserJson
 #        outputUnits = "K"
 
 # %% hard code vars and units
-expi = "historical"
+expi = "ssp245"
 modi = "ACCESS-CM2"
 vari = "tasmax"
 inputVarName = vari
+outputVarName = vari
 outputUnits = "K"
 
-
-cmorTable = "../../Tables/DRCDP_CV.json"
-inputJson = "LOCA2-0_CMIP6_input.json"
+cmorTable = "../../Tables/DRCDP_APday.json"
+inputJson = "LOCA2-0_CMIP6_input-PJD.json"
 
 inputFilePath = (
     "/global/cfs/projectdirs/m3522/cmip6/LOCA2/*/0p0625deg/r1i1p1f1/historical/"
@@ -149,7 +149,7 @@ for mod in mods:
         rns = mod_runs[exp][mod]
         rns = [rns[0]]  ###
         for ri in rns:
-            print("start1")
+            # print("start1")
             infile = inputFilePath.replace("/*/", "/" + mod + "/")
             infile = infile.replace("/pr.*", "/pr." + mod + "*")
             infile = infile.replace("historical", exp)
@@ -160,7 +160,7 @@ for mod in mods:
                 yrs = yrs_scen
 
             for yr in yrs:
-                print("start2")
+                # print("start2")
                 start_time = datetime.now()
                 fc = xc.open_mfdataset(
                     infile,
@@ -169,12 +169,12 @@ for mod in mods:
                 )
                 f = fc
                 # check time values
-                print("check time values from infile")
-                print(f.time.values)
-                print("*****")
+                # print("check time values from infile")
+                # print(f.time.values)
+                # print("*****")
                 f = fc.sel(time=slice(yr[0], yr[1]))
-                print("check time values from dataset selection")
-                print(f.time.values)
+                # print("check time values from dataset selection")
+                # print(f.time.values)
                 d = f[inputVarName]
 
                 lat = f.lat.values
@@ -182,37 +182,38 @@ for mod in mods:
                 lon = f.lon.values
                 # print("lon", lon)
                 time = f.time.values
-                print(time)
-                sys.exit()
-                print("time", time)
+                # print(time)
+                # print("time", time)
                 tunits = "days since 1900-01-01"
 
-                print("start3 - adding bounds")
+                # print("start3 - adding bounds")
                 f = f.bounds.add_bounds("X")
                 f = f.bounds.add_bounds("Y")
                 f = f.bounds.add_bounds("T")
-                print("start4 - bounds added")
+                # print("start4 - bounds added")
 
                 ##### CMOR setup
-                print("cmor start1")
+                # print("cmor start1")
                 cmor.setup(
                     inpath="./",
                     netcdf_file_action=cmor.CMOR_REPLACE_4,
-                    logfile=exp + "-" + mod + "-" + ri + "-" + "cmorLog.txt",
+                    # logfile=exp + "-" + mod + "-" + ri + "-" + "cmorLog.txt",
                 )
                 cmor.dataset_json(inputJson)
                 cmor.dataset_json(writeUserJson(inputJson, cmorTable))
                 cmor.load_table(cmorTable)
 
                 # SET CMIP MODEL SPECIFIC ATTRIBUTES
-                print("cmor start2")
-                cmor.set_cur_dataset_attribute("source_id", "LOCA2--" + mod)
+                # print("cmor start2")
+                # cmor.set_cur_dataset_attribute("source_id", "LOCA2--" + mod)
+                cmor.set_cur_dataset_attribute("driving_mip_era", "CMIP6")
+                cmor.set_cur_dataset_attribute("driving_activity_id", "ScenarioMIP")
+                cmor.set_cur_dataset_attribute("driving_experiment_id", exp)
                 cmor.set_cur_dataset_attribute("driving_source_id", mod)
                 cmor.set_cur_dataset_attribute("driving_variant_label", ri)
-                cmor.set_cur_dataset_attribute("driving_experiment_id", exp)
 
                 # Create CMOR axes
-                print("cmor start3")
+                # print("cmor start3")
                 cmorLat = cmor.axis(
                     "latitude",
                     coord_vals=lat[:],
@@ -227,21 +228,22 @@ for mod in mods:
                 )
                 tbds = cftime.date2num(f.time_bnds.values[:], tunits).astype(np.float64)
 
-                print("time")
-                print(time)
-                print(cftime.date2num(time, tunits).astype(np.float64))
-                sys.exit()
+                # print("time")
+                # print(time)
+                # print(cftime.date2num(time, tunits).astype(np.float64))
+                # print("tbds:", tbds)
+                # print("tunits:", tunits)
 
                 cmorTime = cmor.axis(
                     "time",
-                    coord_vals=cftime.date2num(time, tunits).astype(np.float64),
-                    cell_bounds=tbds,
                     units=tunits,
+                    cell_bounds=tbds,
+                    coord_vals=cftime.date2num(time, tunits).astype(np.float64),
                 )
                 cmoraxes = [cmorTime, cmorLat, cmorLon]
                 # Setup units and create variable to write using cmor - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
                 varid = cmor.variable(
-                    outputVarName, outputUnits, cmoraxes, missing_value=1.0e20
+                    outputVarName, outputUnits, cmoraxes, missing_value=1e20
                 )
                 values = np.array(d[:], np.float32)
 
