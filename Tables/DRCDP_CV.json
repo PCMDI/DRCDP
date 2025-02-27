@@ -37,11 +37,11 @@
             "license":"DRDCP data produced by <Your Institution; see DRDCP_institution_id.json> is licensed under a <Creative Commons; select and insert a license_id; see below> License (<insert the matching license_url; see below>). Consult https://pcmdi.llnl.gov/CMIP6/TermsOfUse for terms of use governing DRDCP output, including citation requirements and proper acknowledgment. The data producers and data providers make no warranty, either express or implied, including, but not limited to, warranties of merchantability and fitness for a particular purpose. All liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law.",
             "license_options":{
                 "CC BY 4.0":{
-                    "license_id":"Creative Commons Attribution 4.0 International",
+                    "license":"Creative Commons Attribution 4.0 International",
                     "license_url":"https://creativecommons.org/licenses/by/4.0/"
                 },
                 "CC0 1.0":{
-                    "license_id":"Creative Commons CC0 1.0 Universal Public Domain Dedication",
+                    "license":"Creative Commons CC0 1.0 Universal Public Domain Dedication",
                     "license_url":"https://creativecommons.org/publicdomain/zero/1.0/"
                 }
             }
@@ -90,6 +90,8 @@
             "grid",
             "grid_label",
             "license",
+            "license_id",
+            "license_url",
             "nominal_resolution",
             "product",
             "realm",
@@ -107,7 +109,9 @@
                 "grid":"5 x 5 km latitude x longitude",
                 "grid_label":"gn",
                 "institution_id":"UCSD-SIO",
-                "license":"CC BY 4.0",
+                "license":"Creative Commons Attribution 4.0 International",
+                "license_id":"CC BY 4.0",
+                "license_url":"https://creativecommons.org/licenses/by/4.0/",
                 "nominal_resolution":"5 km",
                 "product":"downscaled-statistical",
                 "reference":"Pierce, David W., Daniel R. Cayan, and Bridget L. Thrasher (2014) Statistical downscaling using Localized Constructed Analogs (LOCA). Journal of Hydrometeorology, 15 (6), pp 2558-2585. https://doi.org/10.1175/JHM-D-14-0082.1",
@@ -125,7 +129,9 @@
                 "grid":"5 x 5 km latitude x longitude",
                 "grid_label":"gn",
                 "institution_id":"UCSD-SIO",
-                "license":"CC BY 4.0",
+                "license":"Creative Commons Attribution 4.0 International",
+                "license_id":"CC BY 4.0",
+                "license_url":"https://creativecommons.org/licenses/by/4.0/",
                 "nominal_resolution":"5 km",
                 "product":"downscaled-statistical",
                 "reference":"Pierce, David W., Daniel R. Cayan, and Bridget L. Thrasher (2014) Statistical downscaling using Localized Constructed Analogs (LOCA). Journal of Hydrometeorology, 15 (6), pp 2558-2585. https://doi.org/10.1175/JHM-D-14-0082.1",
@@ -143,7 +149,9 @@
                 "grid":"10 x 10 km latitude x longitude",
                 "grid_label":"gn",
                 "institution_id":"UCM-ACSL",
-                "license":"CC0 1.0",
+                "license":"Creative Commons CC0 1.0 Universal Public Domain Dedication",
+                "license_id":"CC0 1.0",
+                "license_url":"https://creativecommons.org/publicdomain/zero/1.0/",
                 "nominal_resolution":"10 km",
                 "product":"downscaled-statistical",
                 "reference":"Abatzoglou, John T., and Timothy J. Brown (2012) A comparison of statistical downscaling methods suited for wildfire applications. International Journal of Climatology, 32 (5), pp 772-780. https://doi.org/10.1002/joc.2312",
@@ -161,7 +169,9 @@
                 "grid":"5 x 5 km latitude x longitude",
                 "grid_label":"gn",
                 "institution_id":"TTU",
-                "license":"CC BY 4.0",
+                "license":"Creative Commons Attribution 4.0 International",
+                "license_id":"CC BY 4.0",
+                "license_url":"https://creativecommons.org/licenses/by/4.0/",
                 "nominal_resolution":"5 km",
                 "product":"downscaled-statistical",
                 "reference":"Hayhoe, K., Scott-Fleming, I., Stoner, A., and Wuebbles, D. J. (2024) STAR-ESDM: A generalizable approach to generating high-resolution climate projections through signal decomposition. Earth's Future, 12, e2023EF004107. https://doi.org/10.1029/2023EF004107",
