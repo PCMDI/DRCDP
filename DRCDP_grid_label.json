@@ -1,5 +1,7 @@
 {
     "grid_label":{
-        "gn":"data reported on the analysis-native grid"
+        "gn":"data reported on the analysis-native grid",
+        "gr":"regridded data reported on the data provider's preferred target grid",
+        "gr1":"regridded data reported on a grid other than the native grid and other than the preferred target grid"
     }
 }

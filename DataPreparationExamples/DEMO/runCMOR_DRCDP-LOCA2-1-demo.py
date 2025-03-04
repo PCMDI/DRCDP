@@ -57,7 +57,10 @@ values = np.array(d, np.float32)[:]
 # cmor.set_variable_attribute(varid,'valid_min','f',2.0)
 # cmor.set_variable_attribute(varid,'valid_max','f',3.0)
 
-# Prepare variable (compression settings), write and close file - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
+# Prepare variable (quantization [commented] and compression), write and close file - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
+# cmor.set_quantize(
+#    varid, 1, 1
+# )  # https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_quantize
 cmor.set_deflate(
     varid, 1, 1, 1
 )  # shuffle=1,deflate=1,deflate_level=1 - Deflate options compress file data
