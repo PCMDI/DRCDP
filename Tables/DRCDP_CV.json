@@ -1,0 +1,193 @@
+{
+    "CV":{
+        "DRS":{
+            "directory_path_example":"DRCDP/NAM/UCSD-SIO/LOCA2-1/CMIP6/CMIP/historical/ACCESS-CM2/r1i1p1f1/day/tasmax/v20250216",
+            "directory_path_template":"<activity_id><region_id><institution_id><source_id><driving_mip_era><driving_activity_id><driving_experiment_id><driving_source_id><driving_variant_label><frequency><variable_id><version>",
+            "filename_example":"tasmax_NAM_UCSD-SIO_LOCA2-1_CMIP6_historical_ACCESS-CM2_r1i1p1f1_day_19500102-19500131.nc",
+            "filename_template":"<variable_id><region_id><institution_id><source_id><driving_mip_era><driving_experiment_id><driving_source_id><driving_variant_label><frequency>"
+        },
+        "activity_id":"DRCDP",
+        "frequency":{
+            "day":"daily mean samples"
+        },
+        "grid_label":{
+            "gn":"data reported on the analysis-native grid"
+        },
+        "institution_id":{
+            "TTU":{
+                "ROR":"0405mnx93",
+                "URL":"https://www.ttu.edu/",
+                "contact":"Katharine Hayhoe; katharine.hayhoe@ttu.edu",
+                "name":"Texas Tech University, 2520 Broadway Avenue, Lubbock, TX 79409, USA"
+            },
+            "UCM-ACSL":{
+                "ROR":"00d9ah105",
+                "URL":"https://www.climatologylab.org",
+                "contact":"John T. Abatzoglou; jabatzoglou@ucmerced.edu",
+                "name":"Applied Climate Science Laboratory, University of California, Merced, 5200 N. Lake Road, Merced, CA 95343, USA"
+            },
+            "UCSD-SIO":{
+                "ROR":"04v7hvq31",
+                "URL":"https://scripps.ucsd.edu",
+                "contact":"Daniel Feldman; DRFeldman@lbl.gov",
+                "name":"Scripps Institution of Oceanography, University of California, San Diego, 9500 Gilman Drive, La Jolla, CA 92093, USA"
+            }
+        },
+        "license":{
+            "license":"DRDCP data produced by <Your Institution; see DRDCP_institution_id.json> is licensed under a <Creative Commons; select and insert a license_id; see below> License (<insert the matching license_url; see below>). Consult https://pcmdi.llnl.gov/CMIP6/TermsOfUse for terms of use governing DRDCP output, including citation requirements and proper acknowledgment. The data producers and data providers make no warranty, either express or implied, including, but not limited to, warranties of merchantability and fitness for a particular purpose. All liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law.",
+            "license_options":{
+                "CC BY 4.0":{
+                    "license":"Creative Commons Attribution 4.0 International",
+                    "license_url":"https://creativecommons.org/licenses/by/4.0/"
+                },
+                "CC0 1.0":{
+                    "license":"Creative Commons CC0 1.0 Universal Public Domain Dedication",
+                    "license_url":"https://creativecommons.org/publicdomain/zero/1.0/"
+                }
+            }
+        },
+        "nominal_resolution":{
+            "0.5 km":"Resolution of 0.5 km",
+            "1 km":"Resolution of 1 km",
+            "10 km":"Resolution of 10 km",
+            "100 km":"Resolution of 100 km",
+            "1000 km":"Resolution of 1000 km",
+            "10000 km":"Resolution of 10000 km",
+            "1x1 degree":"Resolution of 1x1 degree",
+            "2.5 km":"Resolution of 2.5 km",
+            "25 km":"Resolution of 25 km",
+            "250 km":"Resolution of 250 km",
+            "2500 km":"Resolution of 2500 km",
+            "5 km":"Resolution of 5 km",
+            "50 km":"Resolution of 50 km",
+            "500 km":"Resolution of 500 km",
+            "5000 km":"Resolution of 5000 km"
+        },
+        "product":[
+            "downscaled-dynamical",
+            "downscaled-statistical"
+        ],
+        "realm":{
+            "atmos":"Atmosphere",
+            "land":"Land Surface and Subsurface"
+        },
+        "region":{
+            "NAM":"north_america"
+        },
+        "required_global_attributes":[
+            "Conventions",
+            "activity_id",
+            "calendar",
+            "contact",
+            "creation_date",
+            "data_specs_version",
+            "driving_activity_id",
+            "driving_experiment_id",
+            "driving_mip_era",
+            "driving_source_id",
+            "driving_variant_label",
+            "frequency",
+            "grid",
+            "grid_label",
+            "license",
+            "license_id",
+            "license_url",
+            "nominal_resolution",
+            "product",
+            "realm",
+            "region",
+            "region_id",
+            "table_id",
+            "tracking_id",
+            "variable_id"
+        ],
+        "source_id":{
+            "LOCA2-0":{
+                "calendar":"gregorian",
+                "contact":"Daniel Feldman; DRFeldman@lbl.gov",
+                "further_info_url":"https://loca.ucsd.edu/",
+                "grid":"5 x 5 km latitude x longitude",
+                "grid_label":"gn",
+                "institution_id":"UCSD-SIO",
+                "license":"Creative Commons Attribution 4.0 International",
+                "license_id":"CC BY 4.0",
+                "license_url":"https://creativecommons.org/licenses/by/4.0/",
+                "nominal_resolution":"5 km",
+                "product":"downscaled-statistical",
+                "reference":"Pierce, David W., Daniel R. Cayan, and Bridget L. Thrasher (2014) Statistical downscaling using Localized Constructed Analogs (LOCA). Journal of Hydrometeorology, 15 (6), pp 2558-2585. https://doi.org/10.1175/JHM-D-14-0082.1",
+                "region":"north_america",
+                "region_id":"NAM",
+                "source":"LOCA 2.0: Statistically-downscaled climate model projections based on CMIP6",
+                "source_name":"LOCA",
+                "source_version":"2.0",
+                "title":"LOCA 2.0 dataset prepared for DRCDP"
+            },
+            "LOCA2-1":{
+                "calendar":"gregorian",
+                "contact":"Daniel Feldman; DRFeldman@lbl.gov",
+                "further_info_url":"https://loca.ucsd.edu/",
+                "grid":"5 x 5 km latitude x longitude",
+                "grid_label":"gn",
+                "institution_id":"UCSD-SIO",
+                "license":"Creative Commons Attribution 4.0 International",
+                "license_id":"CC BY 4.0",
+                "license_url":"https://creativecommons.org/licenses/by/4.0/",
+                "nominal_resolution":"5 km",
+                "product":"downscaled-statistical",
+                "reference":"Pierce, David W., Daniel R. Cayan, and Bridget L. Thrasher (2014) Statistical downscaling using Localized Constructed Analogs (LOCA). Journal of Hydrometeorology, 15 (6), pp 2558-2585. https://doi.org/10.1175/JHM-D-14-0082.1",
+                "region":"north_america",
+                "region_id":"NAM",
+                "source":"LOCA 2.1: Statistically-downscaled climate model projections based on CMIP6",
+                "source_name":"LOCA",
+                "source_version":"2.1",
+                "title":"LOCA 2.1 dataset prepared for DRCDP"
+            },
+            "MACA3-0":{
+                "calendar":"gregorian",
+                "contact":"John T. Abatzoglou; jabatzoglou@ucmerced.edu",
+                "further_info_url":"https://www.climatologylab.org/maca.html",
+                "grid":"10 x 10 km latitude x longitude",
+                "grid_label":"gn",
+                "institution_id":"UCM-ACSL",
+                "license":"Creative Commons CC0 1.0 Universal Public Domain Dedication",
+                "license_id":"CC0 1.0",
+                "license_url":"https://creativecommons.org/publicdomain/zero/1.0/",
+                "nominal_resolution":"10 km",
+                "product":"downscaled-statistical",
+                "reference":"Abatzoglou, John T., and Timothy J. Brown (2012) A comparison of statistical downscaling methods suited for wildfire applications. International Journal of Climatology, 32 (5), pp 772-780. https://doi.org/10.1002/joc.2312",
+                "region":"north_america",
+                "region_id":"NAM",
+                "source":"MACA 3.0: Statistically-downscaled climate model projections based on CMIP6",
+                "source_name":"MACA",
+                "source_version":"3.0",
+                "title":"MACA 3.0 dataset prepared for DRCDP"
+            },
+            "STAR-ESDM1-0":{
+                "calendar":"365_day",
+                "contact":"Katharine Hayhoe; katharine.hayhoe@ttu.edu",
+                "further_info_url":"https://www.depts.ttu.edu/csc/data/",
+                "grid":"5 x 5 km latitude x longitude",
+                "grid_label":"gn",
+                "institution_id":"TTU",
+                "license":"Creative Commons Attribution 4.0 International",
+                "license_id":"CC BY 4.0",
+                "license_url":"https://creativecommons.org/licenses/by/4.0/",
+                "nominal_resolution":"5 km",
+                "product":"downscaled-statistical",
+                "reference":"Hayhoe, K., Scott-Fleming, I., Stoner, A., and Wuebbles, D. J. (2024) STAR-ESDM: A generalizable approach to generating high-resolution climate projections through signal decomposition. Earth's Future, 12, e2023EF004107. https://doi.org/10.1029/2023EF004107",
+                "region":"north_america",
+                "region_id":"NAM",
+                "source":"STAR-ESDM 1.0: Statistically-downscaled climate model projections based on CMIP6",
+                "source_name":"STAR-ESDM",
+                "source_version":"1.0",
+                "title":"STAR-ESDM 1.0 dataset prepared for DRCDP"
+            }
+        },
+        "table_id":[
+            "APday"
+        ],
+        "tracking_id_prefix":[
+            "hdl:21.14100"
+        ]
+    }
+}

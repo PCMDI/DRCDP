@@ -1,0 +1,8 @@
+{
+    "DRS":{
+        "directory_path_example":"DRCDP/NAM/UCSD-SIO/LOCA2-1/CMIP6/CMIP/historical/ACCESS-CM2/r1i1p1f1/day/tasmax/v20250216",
+        "directory_path_template":"<activity_id><region_id><institution_id><source_id><driving_mip_era><driving_activity_id><driving_experiment_id><driving_source_id><driving_variant_label><frequency><variable_id><version>",
+        "filename_example":"tasmax_NAM_UCSD-SIO_LOCA2-1_CMIP6_historical_ACCESS-CM2_r1i1p1f1_day_19500102-19500131.nc",
+        "filename_template":"<variable_id><region_id><institution_id><source_id><driving_mip_era><driving_experiment_id><driving_source_id><driving_variant_label><frequency>"
+    }
+}

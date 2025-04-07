@@ -1,0 +1,22 @@
+{
+    "institution_id":{
+        "TTU":{
+            "ROR":"0405mnx93",
+            "URL":"https://www.ttu.edu/",
+            "contact":"Katharine Hayhoe; katharine.hayhoe@ttu.edu",
+            "name":"Texas Tech University, 2520 Broadway Avenue, Lubbock, TX 79409, USA"
+        },
+        "UCM-ACSL":{
+            "ROR":"00d9ah105",
+            "URL":"https://www.climatologylab.org",
+            "contact":"John T. Abatzoglou; jabatzoglou@ucmerced.edu",
+            "name":"Applied Climate Science Laboratory, University of California, Merced, 5200 N. Lake Road, Merced, CA 95343, USA"
+        },
+        "UCSD-SIO":{
+            "ROR":"04v7hvq31",
+            "URL":"https://scripps.ucsd.edu",
+            "contact":"Daniel Feldman; DRFeldman@lbl.gov",
+            "name":"Scripps Institution of Oceanography, University of California, San Diego, 9500 Gilman Drive, La Jolla, CA 92093, USA"
+        }
+    }
+}

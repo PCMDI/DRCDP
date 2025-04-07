@@ -1,0 +1,11 @@
+{
+    "activity_id": "DRCDP",
+    "source_id": "LOCA2-1",
+    "driving_activity_id": "CMIP",
+    "driving_experiment_id": "historical",
+    "driving_mip_era": "CMIP6",
+    "driving_source_id": "ACCESS-CM2",
+    "driving_variant_label": "r1i1p1f1",
+    "outpath":"/global/cfs/projectdirs/m3522/project_downscale/"
+}
+

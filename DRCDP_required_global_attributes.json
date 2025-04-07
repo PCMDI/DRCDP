@@ -1,0 +1,29 @@
+{
+    "required_global_attributes":[
+        "Conventions",
+        "activity_id",
+        "calendar",
+        "contact",
+        "creation_date",
+        "data_specs_version",
+        "driving_activity_id",
+        "driving_experiment_id",
+        "driving_mip_era",
+        "driving_source_id",
+        "driving_variant_label",
+        "frequency",
+        "grid",
+        "grid_label",
+        "license",
+        "license_id",
+        "license_url",
+        "nominal_resolution",
+        "product",
+        "realm",
+        "region",
+        "region_id",
+        "table_id",
+        "tracking_id",
+        "variable_id"
+    ]
+}

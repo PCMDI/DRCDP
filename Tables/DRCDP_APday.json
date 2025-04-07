@@ -1,0 +1,213 @@
+{
+    "Header":{
+        "Conventions":"CF-1.7 CMIP-6.5",
+        "approx_interval":1.0,
+        "cmor_version":"3.9.0",
+        "data_specs_version":"6.5.0.0; mip-cmor-tables; f42386929a0057ed15e66a3bac045b8c00d33c0f",
+        "generic_levels":"",
+        "int_missing_value":"-999",
+        "missing_value":"1e20",
+        "product":"DRCDP",
+        "table_date":"2025-02-20",
+        "table_id":"APday"
+    },
+    "variable_entry":{
+        "hursmax":{
+            "cell_measures":"area: areacella",
+            "cell_methods":"area: mean time: maximum",
+            "comment":"The relative humidity with respect to liquid water for T>0 C, and with respect to ice for T<0 C",
+            "dimensions":[
+                "longitude",
+                "latitude",
+                "time",
+                "height2m"
+            ],
+            "frequency":"day",
+            "long_name":"Daily Maximum Near-Surface Relative Humidity",
+            "modeling_realm":[
+                "atmos"
+            ],
+            "ok_max_mean_abs":"",
+            "ok_min_mean_abs":"",
+            "out_name":"hursmax",
+            "positive":"",
+            "standard_name":"relative_humidity",
+            "type":"real",
+            "units":"%",
+            "valid_max":"",
+            "valid_min":""
+        },
+        "hursmin":{
+            "cell_measures":"area: areacella",
+            "cell_methods":"area: mean time: minimum",
+            "comment":"The relative humidity with respect to liquid water for T>0 C, and with respect to ice for T<0 C",
+            "dimensions":[
+                "longitude",
+                "latitude",
+                "time",
+                "height2m"
+            ],
+            "frequency":"day",
+            "long_name":"Daily Minimum Near-Surface Relative Humidity",
+            "modeling_realm":[
+                "atmos"
+            ],
+            "ok_max_mean_abs":"",
+            "ok_min_mean_abs":"",
+            "out_name":"hursmin",
+            "positive":"",
+            "standard_name":"relative_humidity",
+            "type":"real",
+            "units":"%",
+            "valid_max":"",
+            "valid_min":""
+        },
+        "pr":{
+            "cell_measures":"area: areacella",
+            "cell_methods":"area: time: mean",
+            "comment":"includes both liquid and solid phases",
+            "dimensions":[
+                "longitude",
+                "latitude",
+                "time"
+            ],
+            "frequency":"day",
+            "long_name":"Precipitation",
+            "modeling_realm":[
+                "atmos"
+            ],
+            "ok_max_mean_abs":"",
+            "ok_min_mean_abs":"",
+            "out_name":"pr",
+            "positive":"",
+            "standard_name":"precipitation_flux",
+            "type":"real",
+            "units":"kg m-2 s-1",
+            "valid_max":"",
+            "valid_min":""
+        },
+        "rsds":{
+            "cell_measures":"area: areacella",
+            "cell_methods":"area: time: mean",
+            "comment":"Surface solar irradiance for UV calculations",
+            "dimensions":[
+                "longitude",
+                "latitude",
+                "time"
+            ],
+            "frequency":"day",
+            "long_name":"Surface Downwelling Shortwave Radiation",
+            "modeling_realm":[
+                "atmos"
+            ],
+            "ok_max_mean_abs":"",
+            "ok_min_mean_abs":"",
+            "out_name":"rsds",
+            "positive":"down",
+            "standard_name":"surface_downwelling_shortwave_flux_in_air",
+            "type":"real",
+            "units":"W m-2",
+            "valid_max":"",
+            "valid_min":""
+        },
+        "sfcWind":{
+            "cell_measures":"area: areacella",
+            "cell_methods":"area: time: mean",
+            "comment":"near-surface (usually, 10 meters) wind speed",
+            "dimensions":[
+                "longitude",
+                "latitude",
+                "time",
+                "height10m"
+            ],
+            "frequency":"day",
+            "long_name":"Daily-Mean Near-Surface Wind Speed",
+            "modeling_realm":[
+                "atmos"
+            ],
+            "ok_max_mean_abs":"",
+            "ok_min_mean_abs":"",
+            "out_name":"sfcWind",
+            "positive":"",
+            "standard_name":"wind_speed",
+            "type":"real",
+            "units":"m s-1",
+            "valid_max":"",
+            "valid_min":""
+        },
+        "tasmax":{
+            "cell_measures":"area: areacella",
+            "cell_methods":"area: mean time: maximum",
+            "comment":"maximum near-surface (usually, 2 meter) air temperature (add cell_method attribute 'time: max')",
+            "dimensions":[
+                "longitude",
+                "latitude",
+                "time",
+                "height2m"
+            ],
+            "frequency":"day",
+            "long_name":"Daily Maximum Near-Surface Air Temperature",
+            "modeling_realm":[
+                "atmos"
+            ],
+            "ok_max_mean_abs":"",
+            "ok_min_mean_abs":"",
+            "out_name":"tasmax",
+            "positive":"",
+            "standard_name":"air_temperature",
+            "type":"real",
+            "units":"K",
+            "valid_max":"",
+            "valid_min":""
+        },
+        "tasmin":{
+            "cell_measures":"area: areacella",
+            "cell_methods":"area: mean time: minimum",
+            "comment":"minimum near-surface (usually, 2 meter) air temperature (add cell_method attribute 'time: min')",
+            "dimensions":[
+                "longitude",
+                "latitude",
+                "time",
+                "height2m"
+            ],
+            "frequency":"day",
+            "long_name":"Daily Minimum Near-Surface Air Temperature",
+            "modeling_realm":[
+                "atmos"
+            ],
+            "ok_max_mean_abs":"",
+            "ok_min_mean_abs":"",
+            "out_name":"tasmin",
+            "positive":"",
+            "standard_name":"air_temperature",
+            "type":"real",
+            "units":"K",
+            "valid_max":"",
+            "valid_min":""
+        },
+        "tdps":{
+            "cell_measures":"area: areacella",
+            "cell_methods":"area: time: mean",
+            "comment":"Dew point temperature is the temperature at which a parcel of air reaches saturation upon being cooled at constant pressure and specific humidity",
+            "dimensions":[
+                "longitude",
+                "latitude",
+                "time"
+            ],
+            "frequency":"day",
+            "long_name":"2m Dewpoint Temperature",
+            "modeling_realm":[
+                "atmos"
+            ],
+            "ok_max_mean_abs":"",
+            "ok_min_mean_abs":"",
+            "out_name":"tdps",
+            "positive":"",
+            "standard_name":"dew_point_temperature",
+            "type":"real",
+            "units":"K",
+            "valid_max":"",
+            "valid_min":""
+        }
+    }
+}
