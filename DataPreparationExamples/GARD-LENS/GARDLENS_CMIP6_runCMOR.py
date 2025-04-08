@@ -77,7 +77,6 @@ values  = np.array(d[:],np.float32)
 cmor.set_deflate(varid,1,1,1) ; # shuffle=1,deflate=1,deflate_level=1 - Deflate options compress file data
 cmor.write(varid,values,len(time)) ; # Write variable with time axis
 cmor.close()
-f.close()
 fc.close()
 end_time = datetime.now()
 print('done cmorizing ',mod, rn, vari,' process time: {}'.format(end_time-start_time))
