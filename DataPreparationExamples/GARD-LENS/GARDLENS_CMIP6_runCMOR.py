@@ -6,6 +6,11 @@ import numpy as np
 import sys, os, glob
 from datetime import datetime
 
+# %% Get current script path, append src dir
+current_dir = os.path.dirname(os.path.abspath(__file__))
+new_path = os.path.join(current_dir, "..", "..", "src")
+sys.path.append(new_path)
+from DRCDPLib import writeUserJson
 
 multi  = False 
 if multi == True:
@@ -55,7 +60,7 @@ f = f.bounds.add_bounds("T")
 
 ##### CMOR setup
 cmor.setup(inpath='./',netcdf_file_action=cmor.CMOR_REPLACE_4,logfile= vari + '_' + mod + '-' + rn + '-'+'cmorLog.txt')
-cmor.dataset_json(inputJson)
+cmor.dataset_json(writeUserJson(inputJson, cmorTable))
 cmor.load_table(cmorTable)
 
 # SET CMIP MODEL SPECIFIC ATTRIBUTES 

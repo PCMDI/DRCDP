@@ -6,9 +6,10 @@
     "source_id": "GARD-LENS-1-0",
     "institution_id":"NCAR",
     "driving_activity_id": "CMIP",
-    "driving_experiment_id": "historical",
+    "experiment_id": "historical",
     "driving_mip_era": "CMIP6",
     "driving_source_id": "ACCESS-CM2",
     "driving_variant_label": "r1i1p1f1",
+    "region":"NAM",
     "outpath":"/global/cfs/projectdirs/m3522/project_downscale/"
 }
