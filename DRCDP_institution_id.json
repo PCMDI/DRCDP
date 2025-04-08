@@ -1,5 +1,9 @@
 {
     "institution_id":{
+        "NCAR":{
+            "contact":"Samantha Hartke; hartke@ucar.edu",
+            "name":"National Center for Atmospheric Research, Boulder, CO, USA"
+        },
         "TTU":{
             "ROR":"0405mnx93",
             "URL":"https://www.ttu.edu/",
