@@ -1,0 +1,22 @@
+python GARDLENS_CMIP6_runCMOR.py ssp585 pr AWI-CM-1-1-MR 
+python GARDLENS_CMIP6_runCMOR.py ssp585 pr IPSL-CM6A-LR 
+python GARDLENS_CMIP6_runCMOR.py ssp585 pr ACCESS-CM2 
+python GARDLENS_CMIP6_runCMOR.py ssp585 pr INM-CM5-0 
+python GARDLENS_CMIP6_runCMOR.py ssp585 pr KACE-1-0-G 
+python GARDLENS_CMIP6_runCMOR.py ssp585 pr MPI-ESM1-2-LR 
+python GARDLENS_CMIP6_runCMOR.py ssp585 pr NorESM2-LM 
+python GARDLENS_CMIP6_runCMOR.py ssp585 pr CanESM5 
+python GARDLENS_CMIP6_runCMOR.py ssp585 pr GFDL-ESM4 
+python GARDLENS_CMIP6_runCMOR.py ssp585 pr ACCESS-ESM1-5 
+python GARDLENS_CMIP6_runCMOR.py ssp585 pr GFDL-CM4 
+python GARDLENS_CMIP6_runCMOR.py ssp585 pr INM-CM4-8 
+python GARDLENS_CMIP6_runCMOR.py ssp585 pr EC-Earth3 
+python GARDLENS_CMIP6_runCMOR.py ssp585 pr BCC-CSM2-MR 
+python GARDLENS_CMIP6_runCMOR.py ssp585 pr MPI-ESM1-2-HR 
+python GARDLENS_CMIP6_runCMOR.py ssp585 pr TaiESM1 
+python GARDLENS_CMIP6_runCMOR.py ssp585 pr EC-Earth3-Veg 
+python GARDLENS_CMIP6_runCMOR.py ssp585 pr FGOALS-g3 
+python GARDLENS_CMIP6_runCMOR.py ssp585 pr MIROC6 
+python GARDLENS_CMIP6_runCMOR.py ssp585 pr NorESM2-MM 
+python GARDLENS_CMIP6_runCMOR.py ssp585 pr MRI-ESM2-0 
+
