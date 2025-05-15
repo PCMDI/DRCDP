@@ -13,13 +13,17 @@ sys.path.append(new_path)
 from DRCDPLib import writeUserJson
 
 cmorTable = '../../Tables/DRCDP_APday.json'
-inputJson = 'STAR-ESDM_CMIP6_input.json'
+inputJson = 'MACA3-0_CMIP6_input.json'
 
 multi  = True
 if multi == True:
  expi = sys.argv[1]
  modi = sys.argv[3]
  vr = sys.argv[2]
+
+# TEST RUN
+# python -i MACA3-0_CMIP6_runCMOR.py historical pr GFDL-ESM2G
+#
 
 inputFilePath = '/global/cfs/projectdirs/m3522/cmip6/MACA/GFDL-ESM2G/macav2metdata_pr_GFDL-ESM2G_r1i1p1_historical_1950_1954_CONUS_daily.nc'
 inputFilePath = '/global/cfs/projectdirs/m3522/cmip6/MACA/GFDL-ESM2G/macav2metdata_pr_GFDL-ESM2G_r1i1p1_historical_*_CONUS_daily.nc'
@@ -55,21 +59,18 @@ if multi == True: exps = [expi]
 if multi == True: mods = [modi]
 
 print(modi, expi, vr, inputFilePath)
-#w = sys.stdin.readline()
 
 for mod in mods:
  for exp in exps:
     filelist = glob.glob(inputFilePath)
 
     fi = inputFilePath.replace('GFDL-ESM2G',modi)
-    fc = xc.open_mfdataset(filelist,decode_times=False,use_cftime=False)
-#   fc.time.attrs['calendar'] = '365_day'
+    fc = xc.open_mfdataset(filelist,decode_times=True,use_cftime=True)
     fd = fc
-    fd.coords['time'] = cftime.num2date(fc.time.values, 'days since 1950-01-01', calendar='365_day')
 
     for yr in yrs_all:
      start_time = datetime.now()
-     f = fd.sel(time=slice(yr[0],yr[1]))
+     f = fd.sel(time=slice(yr[0]+ '-01-01',yr[1]+ '-01-01')) 
      d = f[inputVarName]
      lat = f.lat.values  
      lon = f.lon.values  
@@ -78,12 +79,12 @@ for mod in mods:
      if vr in ['tasmin','tasmax']: d = np.add(d,units_conv)
      if vr in ['pr']: d = np.divide(d,units_conv)
 
-#    f = f.bounds.add_bounds("X") 
-#    f = f.bounds.add_bounds("Y")
+     f = f.bounds.add_bounds("X") 
+     f = f.bounds.add_bounds("Y")
      f = f.bounds.add_bounds("T")
 
 # For more information see https://cmor.llnl.gov/mydoc_cmor3_api/
-     cmor.setup(inpath='./',netcdf_file_action=cmor.CMOR_REPLACE_4,logfile=exp + '-' + mod + '-' + ri + '-'+ 'cmorLog.txt')
+     cmor.setup(inpath='./',netcdf_file_action=cmor.CMOR_REPLACE_4,logfile=exp + '-' + mod + '-r1i1p1-'+ 'cmorLog.txt')
 #    cmor.dataset_json(inputJson)
      cmor.dataset_json(writeUserJson(inputJson, cmorTable))
      cmor.load_table(cmorTable)
@@ -91,10 +92,10 @@ for mod in mods:
 # SET CMIP MODEL SPECIFIC ATTRIBUTES 
 #    cmor.set_cur_dataset_attribute("source_id","STAR-ESDM-v0--" + mod)
      cmor.set_cur_dataset_attribute("driving_source_id",mod)
-     cmor.set_cur_dataset_attribute("driving_variant_label",ri)
+     cmor.set_cur_dataset_attribute("driving_variant_label",'r1i1p1')
 #    cmor.set_cur_dataset_attribute("driving_experiment_id",exp)
      cmor.set_cur_dataset_attribute("driving_experiment_id",'historical-' + exp)
-     cmor.set_cur_dataset_attribute("driving_grid_label",grid_label)
+#    cmor.set_cur_dataset_attribute("driving_grid_label",grid_label)
 
      if expi in ['historical']: cmor.set_cur_dataset_attribute("driving_activity_id",'CMIP') 
      if expi in ['ssp245','ssp585']: cmor.set_cur_dataset_attribute("driving_activity_id",'ScenarioMIP') 
@@ -105,8 +106,8 @@ for mod in mods:
      tbds_np = np.array(tbds_np[:],np.float32)  #tbds_np.astype(np.float32)
 
 # Create CMOR axes
-     cmorLat = cmor.axis("latitude", coord_vals=lat[:], cell_bounds=f.latitude_bnds.values, units="degrees_north")
-     cmorLon = cmor.axis("longitude", coord_vals=lon[:], cell_bounds=f.longitude_bnds.values, units="degrees_east")
+     cmorLat = cmor.axis("latitude", coord_vals=lat[:], cell_bounds=f.lat_bnds.values, units="degrees_north")
+     cmorLon = cmor.axis("longitude", coord_vals=lon[:], cell_bounds=f.lon_bnds.values, units="degrees_east")
      cmorTime = cmor.axis("time", coord_vals=time_np, cell_bounds=tbds_np, units= tunits)
      cmoraxes = [cmorTime,cmorLat, cmorLon]
 # Setup units and create variable to write using cmor - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
@@ -117,5 +118,5 @@ for mod in mods:
      cmor.close()
      f.close()
      end_time = datetime.now()
-     print('done cmorizing ',vr, mod, exp, ri, yr[0] + ' - ' + yr[1],' process time: {}'.format(end_time-start_time))
+     print('done cmorizing ',vr, mod, exp, 'r1i1p1', yr[0] + ' - ' + yr[1],' process time: {}'.format(end_time-start_time))
                                                           
