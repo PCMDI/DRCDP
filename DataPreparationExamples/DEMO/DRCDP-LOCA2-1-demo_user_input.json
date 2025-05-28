@@ -6,5 +6,6 @@
     "driving_mip_era": "CMIP6",
     "driving_source_id": "ACCESS-CM2",
     "driving_variant_label": "r1i1p1f1",
+    "_license_id": "CC BY 4.0",
     "outpath": "./demo"
 }

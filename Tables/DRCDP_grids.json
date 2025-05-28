@@ -3,7 +3,7 @@
         "cmor_version":"3.9.0",
         "data_specs_version":"6.5.0.0; input4MIPs-cmor-tables; e4fa82f330125fbdd78fa8315225829eabffee70",
         "product":"DRCDP",
-        "table_date":"2025-02-20"
+        "table_date":"2025-05-28"
     },
     "axis_entry":{
         "grid_latitude":{
