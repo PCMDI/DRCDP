@@ -6,9 +6,7 @@
     "driving_mip_era": "CMIP6",
     "driving_source_id": "ACCESS-CM2",
     "driving_variant_label": "r1i1p1f1",
-    "#outpath": "/global/cfs/projectdirs/m3522/project_downscale/",
     "outpath": "./demo",
     "# this fails - _license_id": "a",
-    "_license_id": "CC0 1.0",
-    "calendar":"365_day"
+    "_license_id": "CC0 1.0"
 }
