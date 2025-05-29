@@ -4,9 +4,9 @@ import sys
 import numpy as np
 import xcdat as xc
 
-#%% Notes
+# %% Notes
 # to-do
-# add  "Header":{ ... "table_id": "Table grids", to ../../Tables/DRCDP_grids.json 
+# add  "Header":{ ... "table_id": "Table grids", to ../../Tables/DRCDP_grids.json
 
 # %% Get current script path, append src dir
 current_dir = os.path.dirname(os.path.abspath(__file__))
@@ -37,7 +37,7 @@ d = np.where(np.isnan(d), 1.0e20, d)
 
 # Initialize and run CMOR. For more information see https://cmor.llnl.gov/mydoc_cmor3_api/
 cmor.setup(
-    inpath="./", netcdf_file_action=cmor.CMOR_REPLACE_4
+    inpath="../../Tables", netcdf_file_action=cmor.CMOR_REPLACE_4
 )  # ,logfile='cmorLog.txt')
 cmor.dataset_json(
     writeUserJson(inputJson, cmorTable)
@@ -76,24 +76,22 @@ grid_params = {
     "crs_wkt": crs_wkt,
 }
 
-# Create CMOR spatial axes
+# Create CMOR spatial axes and grid
 cmorLat = cmor.axis(
     "latitude", coord_vals=lat[:], cell_bounds=f.lat_bnds.values, units="degrees_north"
 )
 cmorLon = cmor.axis(
     "longitude", coord_vals=lon[:], cell_bounds=f.lon_bnds.values, units="degrees_east"
 )
+gridId = cmor.grid(axis_ids=[cmorLat, cmorLon], latitude=latGrid, longitude=lonGrid)
 
 # Load CMOR tables
 cmor.load_table(cmorTable)
 
 # Create CMOR time axis
 cmorTime = cmor.axis("time", coord_vals=time[:], cell_bounds=tbds, units=f.time.units)
-cmoraxes = [cmorTime, cmorLat, cmorLon]
+# cmoraxes = [cmorTime, cmorLat, cmorLon]
 
-## gridId = cmor.grid(axis_ids=cmoraxes, latitude=latGrid, longitude=lonGrid)
-gridId = cmor.grid(axis_ids=[cmorLat, cmorLon], latitude=latGrid, longitude=lonGrid)
-# cmoraxes.append(gridId)
 
 # Call cmor.set_crs
 cmor.set_crs(
