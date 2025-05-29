@@ -101,27 +101,28 @@ cmor.set_crs(
 )
 
 # Create CMOR variable to write - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
-##varid = cmor.variable(outputVarName, outputUnits, cmoraxes, missing_value=1.0e20)
-varid = cmor.variable(
+varId = cmor.variable(
     outputVarName, outputUnits, [cmorTime, gridId], missing_value=1.0e20
 )
 values = np.array(d, np.float32)[:]
 
 # Append valid_min and valid_max attributes to variable - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
-# cmor.set_variable_attribute(varid,'valid_min','f',2.0)
-# cmor.set_variable_attribute(varid,'valid_max','f',3.0)
+# cmor.set_variable_attribute(varId,'valid_min','f',2.0)
+# cmor.set_variable_attribute(varId,'valid_max','f',3.0)
 
 # Prepare variable (quantization [commented] and compression), write and close file - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
 # cmor.set_quantize(
-#    varid, 1, 1
+#    varId, 1, 1
 # )  # https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_quantize
 cmor.set_deflate(
-    varid, 1, 1, 1
-)  # shuffle=1,deflate=1,deflate_level=1 - Deflate options compress file data
-# cmor.write(varid, d, len(time))  # ! Warning: You defined variable "tasmax" (table APday) with a missing value of type "f",
+    varId, 1, 1, 1
+)  # shuffle=1,deflate=1,deflate_level=1 - Deflate options compress file data - https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_deflate
+
+# Write variable to netcdf file
+# cmor.write(varId, d, len(time))  # ! Warning: You defined variable "tasmax" (table APday) with a missing value of type "f",
 #                                     but you are now writing data of type: "d" this may lead to some spurious handling of the missing values
 cmor.write(
-    varid, values, len(time)
+    varId, values, len(time)
 )  # fix issue with non-rewritten type (also fix in LOCA2-1 demo)
 cmor.close()
 f.close()
