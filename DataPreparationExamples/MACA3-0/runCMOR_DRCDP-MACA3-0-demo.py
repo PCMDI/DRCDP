@@ -4,6 +4,10 @@ import sys
 import numpy as np
 import xcdat as xc
 
+#%% Notes
+# to-do
+# add  "Header":{ ... "table_id": "Table grids", to ../../Tables/DRCDP_grids.json 
+
 # %% Get current script path, append src dir
 current_dir = os.path.dirname(os.path.abspath(__file__))
 new_path = os.path.join(current_dir, "..", "..", "src")
@@ -38,10 +42,8 @@ cmor.setup(
 cmor.dataset_json(
     writeUserJson(inputJson, cmorTable)
 )  # use function to add CMOR and DRCDP required arguments
-cmor.load_table(cmorTable)
 
 # Prepare crs variable
-"""
 gridTable = cmor.load_table("../../Tables/DRCDP_grids.json")
 cmor.set_table(gridTable)
 latGrid, lonGrid = np.broadcast_arrays(
@@ -73,31 +75,38 @@ grid_params = {
     "GeoTransform": "-179.5 0.1 0 74.5 0.1",
     "crs_wkt": crs_wkt,
 }
-"""
-# Create CMOR axes
+
+# Create CMOR spatial axes
 cmorLat = cmor.axis(
     "latitude", coord_vals=lat[:], cell_bounds=f.lat_bnds.values, units="degrees_north"
 )
 cmorLon = cmor.axis(
     "longitude", coord_vals=lon[:], cell_bounds=f.lon_bnds.values, units="degrees_east"
 )
+
+# Load CMOR tables
+cmor.load_table(cmorTable)
+
+# Create CMOR time axis
 cmorTime = cmor.axis("time", coord_vals=time[:], cell_bounds=tbds, units=f.time.units)
 cmoraxes = [cmorTime, cmorLat, cmorLon]
 
-# gridId = cmor.grid(axis_ids=cmoraxes, latitude=latGrid, longitude=lonGrid)
+## gridId = cmor.grid(axis_ids=cmoraxes, latitude=latGrid, longitude=lonGrid)
+gridId = cmor.grid(axis_ids=[cmorLat, cmorLon], latitude=latGrid, longitude=lonGrid)
 # cmoraxes.append(gridId)
 
 # Call cmor.set_crs
-"""
 cmor.set_crs(
     grid_id=gridId,
     mapping_name=crs_params["grid_mapping_name"],
     parameter_names=grid_params,
 )
-"""
 
 # Create CMOR variable to write - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
-varid = cmor.variable(outputVarName, outputUnits, cmoraxes, missing_value=1.0e20)
+##varid = cmor.variable(outputVarName, outputUnits, cmoraxes, missing_value=1.0e20)
+varid = cmor.variable(
+    outputVarName, outputUnits, [cmorTime, gridId], missing_value=1.0e20
+)
 values = np.array(d, np.float32)[:]
 
 # Append valid_min and valid_max attributes to variable - see https://cmor.llnl.gov/mydoc_cmor3_api/#cmor_set_variable_attribute
