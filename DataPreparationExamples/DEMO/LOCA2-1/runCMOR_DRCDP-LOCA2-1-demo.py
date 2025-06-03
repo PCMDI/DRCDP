@@ -1,20 +1,20 @@
 import cmor
-import numpy as np
 import os
 import sys
+import numpy as np
 import xcdat as xc
 
 # %% Get current script path, append src dir
 current_dir = os.path.dirname(os.path.abspath(__file__))
-new_path = os.path.join(current_dir, "..", "..", "src")
+new_path = os.path.join(current_dir, "..", "..", "..", "src")
 sys.path.append(new_path)
 from DRCDPLib import writeUserJson
 
 # %% start user input below
 
-cmorTable = "../../Tables/DRCDP_APday.json"  # APday, APmon,LPday, LPmon - Load target table, axis info (coordinates, grid*) and CVs
+cmorTable = "../../../Tables/DRCDP_APday.json"  # APday, APmon,LPday, LPmon - Load target table, axis info (coordinates, grid*) and CVs
 inputJson = "DRCDP-LOCA2-1-demo_user_input.json"  # Update contents of this file to set your global_attributes
-inputFilePath = "DRCDP_demo_data.nc"
+inputFilePath = "DRCDP-LOCA2-1_demo_data.nc"
 inputVarName = "tasmax"
 outputVarName = "tasmax"
 outputUnits = "K"

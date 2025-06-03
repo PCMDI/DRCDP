@@ -1,0 +1,12 @@
+{
+    "activity_id": "DRCDP",
+    "source_id": "MACA3-0",
+    "driving_activity_id": "CMIP",
+    "driving_experiment_id": "historical",
+    "driving_mip_era": "CMIP6",
+    "driving_source_id": "ACCESS-CM2",
+    "driving_variant_label": "r1i1p1f1",
+    "outpath": "./demo",
+    "# this fails - _license_id": "a",
+    "_license_id": "CC0 1.0"
+}
