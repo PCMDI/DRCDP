@@ -6,7 +6,9 @@
             "filename_example":"tasmax_NAM_UCSD-SIO_LOCA2-1_CMIP6_historical_ACCESS-CM2_r1i1p1f1_day_19500102-19500131.nc",
             "filename_template":"<variable_id><region_id><institution_id><source_id><driving_mip_era><driving_experiment_id><driving_source_id><driving_variant_label><frequency>"
         },
-        "activity_id":"DRCDP",
+        "activity_id":[
+            "DRCDP"
+        ],
         "frequency":{
             "day":"daily mean samples"
         },
