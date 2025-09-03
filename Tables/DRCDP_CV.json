@@ -10,6 +10,7 @@
             "DRCDP"
         ],
         "frequency":{
+            "1hr":"sampled hourly",
             "day":"daily mean samples"
         },
         "grid_label":{
@@ -18,6 +19,12 @@
             "gr1":"regridded data reported on a grid other than the native grid and other than the preferred target grid"
         },
         "institution_id":{
+            "EPA":{
+                "ROR":"03tns0030",
+                "URL":"https://www.epa.gov/",
+                "contact":"Megan Mallard; Mallard.Megan@epa.gov",
+                "name":"U.S. Environmental Protection Agency"
+            },
             "TTU":{
                 "ROR":"0405mnx93",
                 "URL":"https://www.ttu.edu/",
@@ -106,6 +113,26 @@
             "variable_id"
         ],
         "source_id":{
+            "EDDE2-0":{
+                "calendar":"gregorian",
+                "contact":"Megan Mallard; Mallard.Megan@epa.gov",
+                "further_info_url":"",
+                "grid":"10 x 10 km latitude x longitude",
+                "grid_label":"gn",
+                "institution_id":"EPA",
+                "license":"Creative Commons Attribution 4.0 International",
+                "license_id":"CC BY 4.0",
+                "license_url":"https://creativecommons.org/licenses/by/4.0/",
+                "nominal_resolution":"10 km",
+                "product":"downscaled-statistical",
+                "reference":"Nolte et al., JAWMA, 2021, https://doi.org/10.1080/10962247.2021.1970048",
+                "region":"north_america",
+                "region_id":"NAM",
+                "source":"EPA Dynamically Downscaled Ensemble (EDDE)",
+                "source_name":"EDDE",
+                "source_version":"2.0",
+                "title":"EDDE 2.0 dataset prepared for DRCDP"
+            },
             "LOCA2-0":{
                 "calendar":"gregorian",
                 "contact":"Daniel Feldman; DRFeldman@lbl.gov",
@@ -188,6 +215,7 @@
             }
         },
         "table_id":[
+            "AP1hr",
             "APday"
         ],
         "tracking_id_prefix":[
