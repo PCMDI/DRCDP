@@ -74,7 +74,10 @@ for mod in mods:
   rns= [] 
   tmp1 = inputFilePath.replace('ACCESS-CM2',mod)
   tmp2 = tmp1.replace('r1i1p1f1','*')
-  lst = glob.glob(tmp2)
+  tmp3 = tmp2.replace('ssp245',exp)
+  if exp == 'ssp585': tmp3 = tmp3.replace('.nclimgrid.star.','.nclimgrid.nclimgrid.')
+  print(tmp3)
+  lst = glob.glob(tmp3)
   for rn in lst:
    rns.append(rn.split('.')[2])
   for ri in rns:
@@ -84,8 +87,9 @@ for mod in mods:
     fi = fi.replace('r1i1p1f1',ri)
     fc = xc.open_dataset(fi,decode_times=False,use_cftime=False)
     fc.time.attrs['calendar'] = '365_day'
+
     fd = fc
-    fd.coords['time'] = cftime.num2date(fc.time.values, 'days since 1950-01-01', calendar='365_day')
+    fd.coords['time'] = cftime.num2date(fd.time.values, 'days since 1950-01-01', calendar='365_day')
 
     for yr in yrs_all:
      start_time = datetime.now()
@@ -97,13 +101,14 @@ for mod in mods:
      tunits = "days since 1950-01-01"
      if vr in ['tasmin','tasmax']: d = np.add(d,units_conv)
      if vr in ['pr']: d = np.divide(d,units_conv)
+     d = np.where(np.isnan(d),1.e20,d)
 
      f = f.bounds.add_bounds("X") 
      f = f.bounds.add_bounds("Y")
      f = f.bounds.add_bounds("T")
 
 # For more information see https://cmor.llnl.gov/mydoc_cmor3_api/
-     cmor.setup(inpath='./',netcdf_file_action=cmor.CMOR_REPLACE_4,logfile=exp + '-' + mod + '-' + ri + '-'+ 'cmorLog.txt')
+     cmor.setup(inpath='./',netcdf_file_action=cmor.CMOR_REPLACE_4,logfile=exp + '-' + mod + '-' + ri + '-'+ vr + '-cmorLog.txt')
      cmor.dataset_json(writeUserJson(inputJson, cmorTable))
      cmor.load_table(cmorTable)
 

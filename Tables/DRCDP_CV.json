@@ -192,6 +192,26 @@
                 "source_name":"STAR-ESDM",
                 "source_version":"1.0",
                 "title":"STAR-ESDM 1.0 dataset prepared for DRCDP"
+            },
+            "nClimGrid-STAR-ESDM1-0":{
+                "calendar":"365_day",
+                "contact":"Katharine Hayhoe; katharine.hayhoe@ttu.edu",
+                "further_info_url":"https://www.depts.ttu.edu/csc/data/",
+                "grid":"5 x 5 km latitude x longitude",
+                "grid_label":"gn",
+                "institution_id":"TTU",
+                "license":"Creative Commons Attribution 4.0 International",
+                "license_id":"CC BY 4.0",
+                "license_url":"https://creativecommons.org/licenses/by/4.0/",
+                "nominal_resolution":"5 km",
+                "product":"downscaled-statistical",
+                "reference":"Hayhoe, K., Scott-Fleming, I., Stoner, A., and Wuebbles, D. J. (2024) STAR-ESDM: A generalizable approach to generating high-resolution climate projections through signal decomposition. Earth's Future, 12, e2023EF004107. https://doi.org/10.1029/2023EF004107",
+                "region":"north_america",
+                "region_id":"NAM",
+                "source":"nClimGrid-STAR-ESDM1-0: Statistically-downscaled climate model projections based on CMIP6",
+                "source_name":"STAR-ESDM",
+                "source_version":"1.0",
+                "title":"nClimGrid-STAR-ESDM v1.0 dataset prepared for DRCDP"
             }
         },
         "table_id":[
