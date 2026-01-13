@@ -1,0 +1,17 @@
+{
+    "_AXIS_ENTRY_FILE": "DRCDP_coordinate.json",
+    "_FORMULA_VAR_FILE": "DRCDP_formula_terms.json",
+    "_controlled_vocabulary_file": "DRCDP_CV.json",
+    "_history_template": "%s; CMOR rewrote data to be consistent with <activity_id>, CMIP6, CMIP6Plus and <Conventions> standards",
+    "activity_id": "DRCDP",
+    "driving_activity_id": "CMIP",
+    "driving_experiment_id": "historical",
+    "driving_mip_era": "CMIP6",
+    "driving_source_id": "ACCESS-CM2",
+    "driving_variant_label": "r1i1p1f1",
+    "outpath": "./demo",
+    "output_file_template": "<variable_id><region_id><institution_id><source_id><driving_mip_era><driving_experiment_id><driving_source_id><driving_variant_label><frequency>",
+    "output_path_template": "<activity_id><region_id><institution_id><source_id><driving_mip_era><driving_activity_id><driving_experiment_id><driving_source_id><driving_variant_label><frequency><variable_id><version>",
+    "source_id": "EDDE2-0",
+    "tracking_prefix": "hdl:21.14100"
+}

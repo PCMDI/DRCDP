@@ -1,10 +1,12 @@
 {
     "Header":{
+        "Conventions":"CF-1.7 CMIP-6.5",
         "cmor_version":"3.9.0",
-        "data_specs_version":"6.5.0.0; input4MIPs-cmor-tables; e4fa82f330125fbdd78fa8315225829eabffee70",
+        "data_specs_version":"6.5.0.0; cmip6-cmor-tables; 30dbad3ea0785c760c621b02185025c69df4d314",
+        "missing_value":"1e20",
         "product":"DRCDP",
-	"table_id": "Table grids",
-        "table_date":"2025-05-28"
+        "table_date":"2025-09-03",
+        "table_id":"Table grids"
     },
     "axis_entry":{
         "grid_latitude":{

@@ -6,8 +6,11 @@
             "filename_example":"tasmax_NAM_UCSD-SIO_LOCA2-1_CMIP6_historical_ACCESS-CM2_r1i1p1f1_day_19500102-19500131.nc",
             "filename_template":"<variable_id><region_id><institution_id><source_id><driving_mip_era><driving_experiment_id><driving_source_id><driving_variant_label><frequency>"
         },
-        "activity_id":"DRCDP",
+        "activity_id":[
+            "DRCDP"
+        ],
         "frequency":{
+            "1hr":"sampled hourly",
             "day":"daily mean samples"
         },
         "grid_label":{
@@ -16,24 +19,10 @@
             "gr1":"regridded data reported on a grid other than the native grid and other than the preferred target grid"
         },
         "institution_id":{
-            "TTU":{
-                "ROR":"0405mnx93",
-                "URL":"https://www.ttu.edu/",
-                "contact":"Katharine Hayhoe; katharine.hayhoe@ttu.edu",
-                "name":"Texas Tech University, 2520 Broadway Avenue, Lubbock, TX 79409, USA"
-            },
-            "UCM-ACSL":{
-                "ROR":"00d9ah105",
-                "URL":"https://www.climatologylab.org",
-                "contact":"John T. Abatzoglou; jabatzoglou@ucmerced.edu",
-                "name":"Applied Climate Science Laboratory, University of California, Merced, 5200 N. Lake Road, Merced, CA 95343, USA"
-            },
-            "UCSD-SIO":{
-                "ROR":"04v7hvq31",
-                "URL":"https://scripps.ucsd.edu",
-                "contact":"Daniel Feldman; DRFeldman@lbl.gov",
-                "name":"Scripps Institution of Oceanography, University of California, San Diego, 9500 Gilman Drive, La Jolla, CA 92093, USA"
-            }
+            "EPA":"United States Environmental Protection Agency, National Exposure Research Laboratory (NERL), Systems Exposure Division, 109 T.W. Alexander Drive, Durham, NC 27709, USA (ROR: 03tns0030)",
+            "TTU":"Texas Tech University, 2520 Broadway Avenue, Lubbock, TX 79409, USA (ROR: 0405mnx93)",
+            "UCM-ACSL":"Applied Climate Science Laboratory, University of California, Merced, 5200 N. Lake Road, Merced, CA 95343, USA (ROR: 00d9ah105)",
+            "UCSD-SIO":"Scripps Institution of Oceanography, University of California, San Diego, 9500 Gilman Drive, La Jolla, CA 92093, USA (ROR: 04v7hvq31)"
         },
         "license":{
             "license_id":{
@@ -104,6 +93,26 @@
             "variable_id"
         ],
         "source_id":{
+            "EDDE2-0":{
+                "calendar":"gregorian",
+                "contact":"Megan Mallard; Mallard.Megan@epa.gov",
+                "further_info_url":"",
+                "grid":"10 x 10 km latitude x longitude",
+                "grid_label":"gn",
+                "institution_id":"EPA",
+                "license":"Creative Commons Attribution 4.0 International",
+                "license_id":"CC BY 4.0",
+                "license_url":"https://creativecommons.org/licenses/by/4.0/",
+                "nominal_resolution":"10 km",
+                "product":"downscaled-statistical",
+                "reference":"Nolte, Christopher G., Tanya L. Spero, Jared H. Bowden, Marcus C. Sarofim, Jeremy Martinich, Megan S. Mallard (2021) Regional temperature-ozone relationships across the U.S. under multiple climate and emissions scenarios. Journal of the Air & Waste Management Association 74 (10), pp 1251-1264. https://doi.org/10.1080/10962247.2021.1970048",
+                "region":"north_america",
+                "region_id":"NAM",
+                "source":"EDDE 2.0: EPA Dynamically Downscaled Ensemble based on CMIP5",
+                "source_name":"EDDE",
+                "source_version":"2.0",
+                "title":"EDDE 2.0 dataset prepared for DRCDP"
+            },
             "LOCA2-0":{
                 "calendar":"gregorian",
                 "contact":"Daniel Feldman; DRFeldman@lbl.gov",
@@ -186,6 +195,7 @@
             }
         },
         "table_id":[
+            "AP1hr",
             "APday"
         ],
         "tracking_id_prefix":[
