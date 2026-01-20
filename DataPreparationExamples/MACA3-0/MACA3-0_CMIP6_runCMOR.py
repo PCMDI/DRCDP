@@ -70,7 +70,7 @@ for mod in mods:
 
     for yr in yrs_all:
      start_time = datetime.now()
-     f = fd.sel(time=slice(yr[0]+ '-01-01',yr[1]+ '-01-01')) 
+     f = fd.sel(time=slice(yr[0]+ '-01-01',yr[1]+ '-12-31')) 
      d = f[inputVarName]
      lat = f.lat.values  
      lon = f.lon.values  
