@@ -1,5 +1,6 @@
 {
     "frequency":{
+        "1hr":"sampled hourly",
         "day":"daily mean samples"
     }
 }

@@ -1,5 +1,11 @@
 {
     "institution_id":{
+        "EPA":{
+            "ROR":"03tns0030",
+            "URL":"https://www.epa.gov/",
+            "contact":"Megan Mallard; Mallard.Megan@epa.gov",
+            "name":"United States Environmental Protection Agency, National Exposure Research Laboratory (NERL), Systems Exposure Division, 109 T.W. Alexander Drive, Durham, NC 27709, USA"
+        },
         "TTU":{
             "ROR":"0405mnx93",
             "URL":"https://www.ttu.edu/",

@@ -1,5 +1,25 @@
 {
     "source_id":{
+        "EDDE2-0":{
+            "calendar":"gregorian",
+            "contact":"Megan Mallard; Mallard.Megan@epa.gov",
+            "further_info_url":"",
+            "grid":"10 x 10 km latitude x longitude",
+            "grid_label":"gn",
+            "institution_id":"EPA",
+            "license":"Creative Commons Attribution 4.0 International",
+            "license_id":"CC BY 4.0",
+            "license_url":"https://creativecommons.org/licenses/by/4.0/",
+            "nominal_resolution":"10 km",
+            "product":"downscaled-statistical",
+            "reference":"Nolte, Christopher G., Tanya L. Spero, Jared H. Bowden, Marcus C. Sarofim, Jeremy Martinich, Megan S. Mallard (2021) Regional temperature-ozone relationships across the U.S. under multiple climate and emissions scenarios. Journal of the Air & Waste Management Association 74 (10), pp 1251-1264. https://doi.org/10.1080/10962247.2021.1970048",
+            "region":"north_america",
+            "region_id":"NAM",
+            "source":"EDDE 2.0: EPA Dynamically Downscaled Ensemble based on CMIP5",
+            "source_name":"EDDE",
+            "source_version":"2.0",
+            "title":"EDDE 2.0 dataset prepared for DRCDP"
+        },
         "LOCA2-0":{
             "calendar":"gregorian",
             "contact":"Daniel Feldman; DRFeldman@lbl.gov",
