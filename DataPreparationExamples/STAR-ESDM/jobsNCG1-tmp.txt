@@ -1,0 +1,4 @@
+python STAR-ESDM-NCG_CMIP6_runCMOR.py ssp585 pr MPI-ESM1-2-HR 
+python STAR-ESDM-NCG_CMIP6_runCMOR.py ssp585 pr FGOALS-g3 
+python STAR-ESDM-NCG_CMIP6_runCMOR.py ssp585 pr NorESM2-MM 
+python STAR-ESDM-NCG_CMIP6_runCMOR.py ssp585 pr NESM3 

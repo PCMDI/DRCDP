@@ -1,0 +1,11 @@
+python STAR-ESDM-NCG_CMIP6_runCMOR.py ssp585 tasmin TaiESM1 
+python STAR-ESDM-NCG_CMIP6_runCMOR.py ssp585 tasmin EC-Earth3 
+python STAR-ESDM-NCG_CMIP6_runCMOR.py ssp585 tasmin EC-Earth3-Veg-LR 
+python STAR-ESDM-NCG_CMIP6_runCMOR.py ssp585 tasmin EC-Earth3-Veg 
+python STAR-ESDM-NCG_CMIP6_runCMOR.py ssp585 tasmin IPSL-CM6A-LR 
+python STAR-ESDM-NCG_CMIP6_runCMOR.py ssp585 tasmin KACE-1-0-G 
+python STAR-ESDM-NCG_CMIP6_runCMOR.py ssp585 tasmin GFDL-CM4 
+python STAR-ESDM-NCG_CMIP6_runCMOR.py ssp585 tasmin GFDL-ESM4 
+python STAR-ESDM-NCG_CMIP6_runCMOR.py ssp585 tasmin INM-CM4-8 
+python STAR-ESDM-NCG_CMIP6_runCMOR.py ssp585 tasmin INM-CM5-0 
+python STAR-ESDM-NCG_CMIP6_runCMOR.py ssp585 tasmin KIOST-ESM 
